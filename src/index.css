@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Design tokens — single source of truth for colour across the app. */
+@theme {
+  --color-accent: #7C8CFF;
+  --color-accent-dim: #4B4FA0;
+  --font-sans: "Inter Variable", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial,
+    system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #050505;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at top, #000 0%, rgba(0, 0, 0, 0.7) 55%, transparent 92%);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft, static accent glow — used once behind the hero portrait. Not animated. */
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  z-index: -1;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 68%);
+  opacity: 0.22;
+  filter: blur(40px);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md border border-white bg-white px-5 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-neutral-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-neutral-700 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-neutral-400 hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950;
+  }
+
+  /* Uppercase section label used above headings for strong section identification. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[color:var(--color-accent)];
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-2 w-2 rounded-full bg-[color:var(--color-accent)];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
