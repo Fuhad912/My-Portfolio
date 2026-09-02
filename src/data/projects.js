@@ -12,6 +12,7 @@ export const projects = [
     liveUrl: 'https://thinkright.com.ng',
     githubUrl: null,
     featured: true,
+    group: 'Products',
   },
   {
     id: 'clashe',
@@ -26,6 +27,7 @@ export const projects = [
     liveUrl: 'https://clashe.vercel.app',
     githubUrl: null,
     featured: true,
+    group: 'Products',
   },
   {
     id: 'oroki-crystals',
@@ -40,6 +42,7 @@ export const projects = [
     liveUrl: 'https://www.orokicrystals.com.ng',
     githubUrl: null,
     featured: true,
+    group: 'Client Work',
   },
   {
     id: 'tomisin-visuals',
@@ -54,6 +57,7 @@ export const projects = [
     liveUrl: 'http://tomisin-visuals-4wfz.vercel.app/',
     githubUrl: null,
     featured: true,
+    group: 'Client Work',
   },
   {
     id: 'neymargpt-pro',
@@ -68,6 +72,7 @@ export const projects = [
     liveUrl: 'https://neymargpt.netlify.app/',
     githubUrl: null,
     featured: true,
+    group: 'Products',
   },
   {
     id: 'bfoods-biscuit-delivery',
@@ -82,6 +87,7 @@ export const projects = [
     liveUrl: 'https://fuhad912.github.io/bfoods/',
     githubUrl: 'https://github.com/fuhad912/bfoods',
     featured: false,
+    group: 'Client Work',
   },
   {
     id: 'gaming-website',
@@ -96,6 +102,7 @@ export const projects = [
     liveUrl: 'https://fuhadgamingwebsite.netlify.app/',
     githubUrl: null,
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'neymargpt-ai-assistant',
@@ -110,6 +117,7 @@ export const projects = [
     liveUrl: 'https://fuhad912.github.io/NeymarGPT/',
     githubUrl: 'https://github.com/fuhad912/NeymarGPT',
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'godson-gadgets',
@@ -124,6 +132,7 @@ export const projects = [
     liveUrl: 'https://tomiwa912.github.io/Godson-Gadgets/',
     githubUrl: 'https://github.com/tomiwa912/Godson-Gadgets',
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'fuhad-fluency-lab',
@@ -138,6 +147,7 @@ export const projects = [
     liveUrl: 'https://fuhadfluencylab.vercel.app',
     githubUrl: null,
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'fuhad-music-room',
@@ -152,6 +162,7 @@ export const projects = [
     liveUrl: 'https://fuhadmusicroom.vercel.app',
     githubUrl: null,
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'solar-system',
@@ -166,6 +177,7 @@ export const projects = [
     liveUrl: 'https://fuhad912.github.io/Solar-System/',
     githubUrl: 'https://github.com/fuhad912/Solar-System',
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'star-animation',
@@ -180,6 +192,7 @@ export const projects = [
     liveUrl: 'https://fuhad912.github.io/Star-Animation/',
     githubUrl: 'https://github.com/fuhad912/Star-Animation',
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'neon-cursor',
@@ -194,6 +207,7 @@ export const projects = [
     liveUrl: 'https://fuhad912.github.io/Neon-Cursor/',
     githubUrl: 'https://github.com/fuhad912/Neon-Cursor',
     featured: false,
+    group: 'Experiments',
   },
   {
     id: 'glowing-heart-animation',
@@ -208,6 +222,7 @@ export const projects = [
     liveUrl: 'https://fuhad912.github.io/Glowing-Heart-animation/',
     githubUrl: 'https://github.com/fuhad912/Glowing-Heart-animation',
     featured: false,
+    group: 'Experiments',
   },
 ]
 

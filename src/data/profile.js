@@ -9,7 +9,7 @@ export const profile = {
   heroKicker: 'Software Engineer in Progress',
   headline: 'I build software, then I make it feel obvious.',
   heroSubtitle:
-    "Computer science student who spends more time in the backend than the browser. I've shipped a CBT exam platform used by real students, a real-time social app backed by Supabase, and an AI assistant with real conversation state.",
+    "Computer science student who spends more time in the backend than the browser. I build with Spring Boot and lean on system design fundamentals to keep things from falling over — I've shipped a CBT exam platform used by real students, a real-time social app backed by Supabase, and an AI assistant with real conversation state.",
   stats: [
     { value: String(projects.length), label: 'Projects shipped' },
     { value: '3+', label: 'Years writing code' },
@@ -49,7 +49,7 @@ export const focusAreas = [
   {
     title: 'Backend & Data',
     description:
-      'API design, relational data modelling, and real-time state sync — the kind of consistency Clashe needs to keep votes and comments accurate across users.',
+      'API design with Spring Boot, relational data modelling, and real-time state sync — plus the system design fundamentals that keep votes and comments accurate across users in Clashe.',
   },
   {
     title: 'Frontend Engineering',
@@ -77,22 +77,25 @@ export const focusAreas = [
   },
 ]
 
+export const testimonialsNote =
+  'Illustrative feedback based on real project outcomes — written to reflect the kind of results these projects delivered while client quotes are being collected.'
+
 export const testimonials = [
   {
     name: 'Adebayo Okeowo',
-    role: 'CEO, TechStart Nigeria',
+    role: 'CEO, TechStart Nigeria (illustrative)',
     quote:
       'Fuhad rebuilt our platform and stayed involved well past launch. He asked the right questions before writing a single line of code.',
   },
   {
     name: 'Fatima Yusuf',
-    role: 'Founder, Lagos Fashion Hub',
+    role: 'Founder, Lagos Fashion Hub (illustrative)',
     quote:
       'The checkout flow he built handled our first real traffic spike without issues. That mattered more to me than how it looked.',
   },
   {
     name: 'Chukwudi Eze',
-    role: 'Managing Director, Abuja Consulting',
+    role: 'Managing Director, Abuja Consulting (illustrative)',
     quote:
       'Clear communication, realistic timelines, and code that our next developer could actually read and extend.',
   },

@@ -4,7 +4,7 @@ import MagneticButton from '../components/MagneticButton'
 import ProjectCard from '../components/ProjectCard'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
-import { faqs, focusAreas, profile, testimonials } from '../data/profile'
+import { faqs, focusAreas, profile, testimonials, testimonialsNote } from '../data/profile'
 import { featuredProjectIds, projects } from '../data/projects'
 
 const featuredProjects = featuredProjectIds
@@ -124,9 +124,7 @@ export default function Home() {
               >
                 <span className="text-neutral-200">Computer Science Student</span>
                 <span className="mx-1.5 text-neutral-600">|</span>
-                <span className="text-neutral-200">Backend Engineer in Java &amp; Python</span>
-                <span className="mx-1.5 text-neutral-600">|</span>
-                <span className="text-neutral-200">CEO, ThinkRight EdTech</span>
+                <span className="text-neutral-200">Founder, ThinkRight</span>
               </Motion.p>
             </Motion.div>
           </Motion.figure>
@@ -224,7 +222,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="04 // RECOMMENDATIONS"
               title="Client & Collaborator Feedback"
-              description="Notes and reviews from clients and project stakeholders."
+              description="Notes reflecting the kind of results these projects delivered."
             />
           </Reveal>
           <div className="mt-8 grid gap-4 sm:mt-10 md:grid-cols-3">
@@ -242,6 +240,9 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={0.15} className="mt-6">
+            <p className="text-xs leading-5 text-neutral-500">{testimonialsNote}</p>
+          </Reveal>
         </div>
       </section>
 
