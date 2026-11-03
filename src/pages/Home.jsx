@@ -46,7 +46,7 @@ export default function Home() {
             variants={heroContainer}
             initial={reduceMotion ? false : 'hidden'}
             animate={reduceMotion ? undefined : 'show'}
-            className="order-1 max-w-2xl"
+            className="order-2 max-w-2xl lg:order-1"
           >
             <Motion.h1
               variants={heroItem}
@@ -118,7 +118,7 @@ export default function Home() {
             initial={reduceMotion ? false : { opacity: 0, scale: 0.94, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="hero-glow relative order-2 w-full justify-self-center lg:justify-self-end"
+            className="hero-glow relative order-1 w-full justify-self-center lg:order-2 lg:justify-self-end"
           >
             <div className="mx-auto h-[160px] w-[160px] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 p-2 shadow-[0_24px_54px_-32px_rgba(124,140,255,0.35)] sm:h-[210px] sm:w-[210px]">
               <img

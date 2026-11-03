@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom'
-import { motion as Motion, useReducedMotion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 
 const ICONS = {
   home: (
@@ -71,8 +71,8 @@ export default function MobileTabBar() {
       aria-label="Primary"
       className="fixed inset-x-0 bottom-0 z-50 flex justify-center px-4 pb-[max(0.9rem,env(safe-area-inset-bottom))] md:hidden"
     >
-      <div className="relative flex items-center gap-0.5 rounded-full border border-white/15 bg-white/10 p-1.5 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.55)] backdrop-blur-2xl backdrop-saturate-150">
-        {/* subtle top highlight to sell the glass edge */}
+      <div className="relative flex items-center gap-0.5 rounded-full border border-white/15 bg-gradient-to-b from-neutral-800 to-neutral-950 p-1.5 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.55)]">
+        {/* Static highlight keeps the depth without filtering scrolling content. */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
