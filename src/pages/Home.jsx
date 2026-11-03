@@ -147,9 +147,7 @@ export default function Home() {
               >
                 <span className="text-neutral-200">Computer Science Student</span>
                 <span className="mx-1.5 text-neutral-600">|</span>
-                <span className="text-neutral-200">Backend Engineer in Java &amp; Python</span>
-                <span className="mx-1.5 text-neutral-600">|</span>
-                <span className="text-neutral-200">CEO, ThinkRight EdTech</span>
+                <span className="text-neutral-200">Founder, ThinkRight</span>
               </Motion.p>
             </Motion.div>
           </Motion.figure>

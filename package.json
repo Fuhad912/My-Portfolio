@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
+    "caniuse-lite": "^1.0.30001810",
     "framer-motion": "^12.35.0",
     "nodemailer": "^9.0.3",
     "react": "^19.2.0",

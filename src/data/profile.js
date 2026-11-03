@@ -9,7 +9,7 @@ export const profile = {
   heroKicker: "Hi, I'm",
   headline: 'I build backend systems and products for real users.',
   heroSubtitle:
-    "I'm a computer science student focused on backend engineering. I build products like ThinkRight, a CBT exam platform, and Clashe, a real-time social debate app.",
+    "I'm a computer science student focused on backend engineering with Spring Boot and system design. I build products like ThinkRight, a CBT exam platform, and Clashe, a real-time social debate app.",
   stats: [
     { value: String(projects.length), label: 'Projects shipped' },
     { value: '3+', label: 'Years writing code' },
@@ -49,7 +49,7 @@ export const focusAreas = [
   {
     title: 'Backend & Data',
     description:
-      'API design, relational data modelling, and real-time state sync to keep votes and comments accurate across Clashe users.',
+      'API design with Spring Boot, relational data modelling, and real-time state sync, supported by system design fundamentals to keep votes and comments accurate across Clashe users.',
   },
   {
     title: 'Frontend Engineering',

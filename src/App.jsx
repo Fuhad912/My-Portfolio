@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Footer from './components/Footer'
+import MobileTabBar from './components/MobileTabBar'
 import Navbar from './components/Navbar'
 import PageTransition from './components/PageTransition'
 import Home from './pages/Home'
@@ -25,7 +26,7 @@ export default function App() {
       <Navbar />
       <ScrollToTop />
 
-      <div className="flex-1 pt-16 sm:pt-20">
+      <div className="flex-1 pt-16 pb-24 sm:pt-20 md:pb-0">
         <AnimatePresence mode="wait" initial={false}>
           <Routes location={location} key={location.pathname}>
             <Route
@@ -50,6 +51,7 @@ export default function App() {
       </div>
 
       <Footer />
+      <MobileTabBar />
     </div>
   )
 }

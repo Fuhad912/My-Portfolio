@@ -4,6 +4,13 @@ import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import { projects } from '../data/projects'
 
+const GROUP_ORDER = ['Products', 'Client Work', 'Experiments']
+const GROUP_DESCRIPTIONS = {
+  Products: 'Self-directed products I own end to end, built and run past launch.',
+  'Client Work': 'Sites and systems built for real clients, shipped to their spec.',
+  Experiments: 'Smaller builds used to practice a specific technique or idea.',
+}
+
 export default function Projects() {
   const [query, setQuery] = useState('')
   const [activeTag, setActiveTag] = useState('All')
@@ -28,6 +35,13 @@ export default function Projects() {
       return matchesTag && matchesQuery
     })
   }, [activeTag, query])
+
+  const groupedProjects = useMemo(() => {
+    return GROUP_ORDER.map((group) => ({
+      group,
+      items: filteredProjects.filter((project) => project.group === group),
+    })).filter((section) => section.items.length > 0)
+  }, [filteredProjects])
 
   return (
     <>
@@ -86,14 +100,25 @@ export default function Projects() {
 
       <section className="py-14 sm:py-16">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-          {filteredProjects.length === 0 ? (
+          {groupedProjects.length === 0 ? (
             <p className="rounded-lg border border-neutral-800 bg-neutral-900/40 p-6 text-sm text-neutral-300">
               No projects match your current filters. Try another search term or tag.
             </p>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} showDetails showLinks />
+            <div className="space-y-14">
+              {groupedProjects.map(({ group, items }) => (
+                <div key={group}>
+                  <div className="mb-6 flex items-baseline justify-between gap-4 border-b border-neutral-800 pb-3">
+                    <h2 className="text-lg font-semibold tracking-tight text-neutral-100">{group}</h2>
+                    <span className="text-xs text-neutral-500">{items.length} project{items.length === 1 ? '' : 's'}</span>
+                  </div>
+                  <p className="mb-6 -mt-3 text-sm text-neutral-400">{GROUP_DESCRIPTIONS[group]}</p>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {items.map((project, index) => (
+                      <ProjectCard key={project.id} project={project} index={index} showDetails showLinks />
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           )}
