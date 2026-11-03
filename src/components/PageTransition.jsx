@@ -5,10 +5,10 @@ export default function PageTransition({ children }) {
 
   return (
     <Motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-      animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
-      exit={reduceMotion ? {} : { opacity: 0, y: -14 }}
-      transition={reduceMotion ? undefined : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={reduceMotion ? {} : { opacity: 1 }}
+      exit={reduceMotion ? {} : { opacity: 0 }}
+      transition={{ duration: reduceMotion ? 0 : 0.18, ease: 'easeOut' }}
     >
       {children}
     </Motion.div>

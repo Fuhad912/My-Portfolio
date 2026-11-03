@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { profile } from '../data/profile'
 
@@ -14,13 +15,23 @@ const sectionLinkClass =
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuButtonRef = useRef(null)
+  const reduceMotion = useReducedMotion()
   const location = useLocation()
   const isHome = location.pathname === '/'
 
   const getHref = (anchor) => (isHome ? anchor : `/${anchor}`)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/45 backdrop-blur-xl">
+    <header
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/95"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && menuOpen) {
+          setMenuOpen(false)
+          menuButtonRef.current?.focus()
+        }
+      }}
+    >
       <nav
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6"
         aria-label="Primary"
@@ -48,6 +59,7 @@ export default function Navbar() {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
           className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-neutral-700 text-neutral-200 transition-colors hover:border-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 md:hidden"
           onClick={() => setMenuOpen((current) => !current)}
@@ -75,38 +87,43 @@ export default function Navbar() {
         </button>
       </nav>
 
-      <div
+      <Motion.div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-neutral-800 bg-neutral-950 px-4 transition-all duration-200 md:hidden ${
-          menuOpen
-            ? 'max-h-64 translate-y-0 py-4 opacity-100'
-            : 'pointer-events-none max-h-0 -translate-y-2 py-0 opacity-0'
-        }`}
+        initial={false}
+        animate={menuOpen ? 'open' : 'closed'}
+        variants={{
+          open: { height: 'auto', opacity: 1, transition: { duration: reduceMotion ? 0 : 0.24, staggerChildren: reduceMotion ? 0 : 0.04 } },
+          closed: { height: 0, opacity: 0, transition: { duration: reduceMotion ? 0 : 0.18 } },
+        }}
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+        className="overflow-hidden bg-neutral-950 px-4 md:hidden"
       >
-        <div className="flex flex-col gap-1">
-          <NavLink
-            to="/"
-            end
-            className="py-2 text-base font-medium text-neutral-100"
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </NavLink>
-          <a href={getHref('#about')} className="py-2 text-base font-medium text-neutral-100" onClick={() => setMenuOpen(false)}>
-            About
-          </a>
-          <NavLink
-            to="/projects"
-            className="py-2 text-base font-medium text-neutral-100"
-            onClick={() => setMenuOpen(false)}
-          >
-            Projects
-          </NavLink>
-          <a href={getHref('#contact')} className="py-2 text-base font-medium text-neutral-100" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
+        <div className="flex flex-col gap-1 border-t border-neutral-800 py-4">
+          {[
+            { label: 'Home', to: '/' },
+            { label: 'About', href: getHref('#about') },
+            { label: 'Projects', to: '/projects' },
+            { label: 'Contact', href: getHref('#contact') },
+          ].map(({ label, to, href }) => (
+            <Motion.div
+              key={label}
+              variants={{ open: { opacity: 1, y: 0 }, closed: { opacity: 0, y: reduceMotion ? 0 : -6 } }}
+              transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
+            >
+              {to ? (
+                <NavLink to={to} end={to === '/'} className="block py-2 text-base font-medium text-neutral-100" onClick={() => setMenuOpen(false)}>
+                  {label}
+                </NavLink>
+              ) : (
+                <a href={href} className="block py-2 text-base font-medium text-neutral-100" onClick={() => setMenuOpen(false)}>
+                  {label}
+                </a>
+              )}
+            </Motion.div>
+          ))}
         </div>
-      </div>
+      </Motion.div>
     </header>
   )
 }

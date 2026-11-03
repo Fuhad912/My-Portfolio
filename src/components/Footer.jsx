@@ -16,7 +16,7 @@ export default function Footer() {
       >
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
           <div>
-            <p className="eyebrow">06 // GET IN TOUCH</p>
+            <p className="eyebrow">05 // GET IN TOUCH</p>
             <h2 className="mt-3.5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Let&apos;s build something worth sharing.
             </h2>

@@ -6,10 +6,10 @@ export const profile = {
   location: 'Osun State, Nigeria',
   role: 'Computer Science Student',
   affiliation: 'Summit University · Founder, Thinkright',
-  heroKicker: 'Software Engineer in Progress',
-  headline: 'I build software, then I make it feel obvious.',
+  heroKicker: "Hi, I'm",
+  headline: 'I build backend systems and products for real users.',
   heroSubtitle:
-    "Computer science student who spends more time in the backend than the browser. I've shipped a CBT exam platform used by real students, a real-time social app backed by Supabase, and an AI assistant with real conversation state.",
+    "I'm a computer science student focused on backend engineering. I build products like ThinkRight, a CBT exam platform, and Clashe, a real-time social debate app.",
   stats: [
     { value: String(projects.length), label: 'Projects shipped' },
     { value: '3+', label: 'Years writing code' },
@@ -19,14 +19,14 @@ export const profile = {
     kicker: 'About',
     title: 'Currently studying computer science. Mostly found in the backend.',
     paragraphs: [
-      "I started by building websites for small businesses in Nigeria — the kind of work where the site has to survive real customers, real payments, and real complaints when something breaks. That pressure taught me more about engineering than any tutorial did.",
-      "These days I care most about the parts users never see: data models, state that doesn't drift, and systems that don't fall over when traffic isn't zero. Thinkright and Clashe — a real-time social app I'm building on Supabase — are where most of that thinking lives right now.",
-      "I'm not chasing trends. I'm trying to get good at the fundamentals — clean architecture, sane APIs, and code a stranger could maintain — while I finish my degree.",
+      "I started by building websites for small businesses in Nigeria. Those sites had to handle real customers, payments, and complaints when something broke. That pressure taught me more about engineering than any tutorial did.",
+      "These days I care most about the parts users never see: data models, state that doesn't drift, and systems that hold up under traffic. I put that thinking into Thinkright and Clashe, a real-time social app I'm building on Supabase.",
+      "While I finish my degree, I'm working on the fundamentals: clean architecture, clear APIs, and code another developer can maintain.",
     ],
   },
   currentlyFocusedOn: [
     'Backend architecture and database design',
-    'Clashe — a real-time social debate app built on Supabase',
+    'Building Clashe, a real-time social debate app on Supabase',
     'Building Thinkright into a platform that scales past one classroom',
   ],
   avatar: {
@@ -49,12 +49,12 @@ export const focusAreas = [
   {
     title: 'Backend & Data',
     description:
-      'API design, relational data modelling, and real-time state sync — the kind of consistency Clashe needs to keep votes and comments accurate across users.',
+      'API design, relational data modelling, and real-time state sync to keep votes and comments accurate across Clashe users.',
   },
   {
     title: 'Frontend Engineering',
     description:
-      'React and vanilla JS interfaces that stay fast and accessible — component structure over copy-pasted divs.',
+      'Fast, accessible React and vanilla JS interfaces built with reusable components.',
   },
   {
     title: 'Applied AI',
@@ -74,27 +74,6 @@ export const focusAreas = [
   {
     title: 'Tooling',
     description: 'React, Vite, Tailwind, Git, and a growing comfort with the parts of the stack below the UI.',
-  },
-]
-
-export const testimonials = [
-  {
-    name: 'Adebayo Okeowo',
-    role: 'CEO, TechStart Nigeria',
-    quote:
-      'Fuhad rebuilt our platform and stayed involved well past launch. He asked the right questions before writing a single line of code.',
-  },
-  {
-    name: 'Fatima Yusuf',
-    role: 'Founder, Lagos Fashion Hub',
-    quote:
-      'The checkout flow he built handled our first real traffic spike without issues. That mattered more to me than how it looked.',
-  },
-  {
-    name: 'Chukwudi Eze',
-    role: 'Managing Director, Abuja Consulting',
-    quote:
-      'Clear communication, realistic timelines, and code that our next developer could actually read and extend.',
   },
 ]
 

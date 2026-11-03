@@ -43,11 +43,11 @@ export default function ContactForm() {
       if (response.ok && data.success) {
         setSubmitted(true)
       } else {
-        throw new Error(data.error || 'Failed to send email via Node.js mailer.')
+        throw new Error(data.error || 'Your message could not be sent. Please try again.')
       }
     } catch (err) {
       console.error('Nodemailer submit error:', err)
-      setErrorMessage(err.message || 'Something went wrong. Please check your backend mailer configuration.')
+      setErrorMessage(err.message || 'Something went wrong. Please try again or contact me by email.')
     } finally {
       setIsSubmitting(false)
     }
@@ -64,7 +64,7 @@ export default function ContactForm() {
       <div className="mb-6">
         <h3 className="text-xl font-semibold tracking-tight text-neutral-100">Send a message</h3>
         <p className="mt-1 text-sm text-neutral-400">
-          Powered by Node.js mailer. Messages land directly in <span className="text-white font-medium">{profile.contact.email}</span>.
+          Messages land directly in <span className="text-white font-medium">{profile.contact.email}</span>.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export default function ContactForm() {
           </div>
           <h4 className="mt-4 text-base font-semibold text-neutral-100">Message sent!</h4>
           <p className="mt-2 text-sm text-neutral-300">
-            Your message has been sent via Node.js Nodemailer. I&apos;ll get back to you at <strong className="text-white">{formData.email}</strong> as soon as possible.
+            Your message has been sent. I&apos;ll get back to you at <strong className="text-white">{formData.email}</strong> as soon as possible.
           </p>
           <button
             type="button"
@@ -169,7 +169,7 @@ export default function ContactForm() {
               disabled={isSubmitting}
               className="btn-primary w-full sm:w-auto"
             >
-              {isSubmitting ? 'Sending via Node.js Mailer...' : 'Send Message'}
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>

@@ -7,11 +7,14 @@ function ProjectCardComponent({ project, index = 0, showDetails = true, showLink
   return (
     <Motion.article
       className="group flex h-full flex-col overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900/40 transition-colors hover:border-neutral-700"
-      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
       whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={reduceMotion ? undefined : { duration: 0.4, ease: 'easeOut', delay: index * 0.05 }}
-      whileHover={reduceMotion ? undefined : { y: -6 }}
+      viewport={{ once: true, amount: 0.1, margin: '0px 0px -32px 0px' }}
+      transition={reduceMotion ? undefined : {
+        opacity: { duration: 0.55, delay: Math.min(index * 0.08, 0.24) },
+        y: { type: 'spring', stiffness: 260, damping: 28 },
+      }}
+      whileHover={reduceMotion ? undefined : { y: -4 }}
     >
       <div className="relative aspect-[16/10] overflow-hidden border-b border-neutral-800 bg-neutral-900">
         <img
@@ -19,7 +22,7 @@ function ProjectCardComponent({ project, index = 0, showDetails = true, showLink
           alt={project.alt}
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          className="h-full w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.025]"
         />
       </div>
 

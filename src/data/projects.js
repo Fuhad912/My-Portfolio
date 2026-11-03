@@ -3,7 +3,7 @@ export const projects = [
     id: 'thinkright',
     title: 'ThinkRight',
     description:
-      'A CBT exam platform built for Nigerian students preparing for JAMB — timed tests, scoring, and a question bank that mirrors the real exam format.',
+      'A CBT exam platform for Nigerian students preparing for JAMB, with timed tests, scoring, and a question bank that mirrors the real exam format.',
     challenge: 'Needed exam logic (timing, scoring, navigation) to feel identical to the real JAMB CBT interface so practice actually transfers.',
     highlights: ['Timed computer-based test flow', 'Structured question bank by subject', 'Built and run as an active product, not a demo'],
     image: '/images/ThinkRight.png',
@@ -32,7 +32,7 @@ export const projects = [
     title: 'Oroki Crystals',
     description:
       'Website for a socio-cultural organisation in Osogbo, Nigeria, built to present the group\u2019s programmes and community work clearly to new members and partners.',
-    challenge: 'Organise dense organisational content — history, leadership, programmes — into a structure a first-time visitor can navigate in seconds.',
+    challenge: 'Organise history, leadership, and programme information into a structure a first-time visitor can navigate in seconds.',
     highlights: ['Clear information architecture', 'Fully responsive layout', 'Fast static delivery'],
     image: '/images/oroki-crystals.png',
     alt: 'Oroki Crystals website',
@@ -101,7 +101,7 @@ export const projects = [
     id: 'neymargpt-ai-assistant',
     title: 'NeymarGPT v1',
     description:
-      'The first version of the AI assistant — vanilla JavaScript, direct API calls, and the groundwork for what became NeymarGPT Pro.',
+      'The first version of the AI assistant, built with vanilla JavaScript and direct API calls. It laid the groundwork for NeymarGPT Pro.',
     challenge: 'Ship a working conversational interface from scratch without a framework to lean on.',
     highlights: ['Vanilla JS state handling', 'Direct API integration', 'Foundation for the Pro rebuild'],
     image: '/images/neymargpt.png',
